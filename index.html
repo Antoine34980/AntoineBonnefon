@@ -8,153 +8,283 @@
 
   <style>
     :root {
-  --bg: #f7f7f5;
-  --card: #ffffff;
-  --text: #1f1f1f;
-  --muted: #6b6b6b;
-  --line: #e8e8e4;
-  --hover: #f1f1ed;
-  --max: 860px;
-  --radius: 18px;
-}
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #6b6b6b;
+      --muted-light: #9a9a9a;
+      --line: #e8e8e4;
+      --hover: #f1f1ed;
+      --max: 860px;
+      --radius: 18px;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.container {
-  width: min(calc(100% - 32px), var(--max));
-  margin: 0 auto;
-}
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-header {
-  padding: 72px 0 36px;
-}
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
 
-.intro {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 28px;
-}
+    header {
+      padding: 72px 0 36px;
+    }
 
-h1 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  margin: 0 0 10px;
-}
+    .intro {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
 
-.subtitle,
-.meta {
-  color: var(--muted);
-}
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin: 0 0 10px;
+    }
 
-main {
-  padding: 26px 0 64px;
-}
+    .subtitle,
+    .meta {
+      color: var(--muted);
+    }
 
-.notes {
-  display: grid;
-  gap: 8px;
-}
+    .subtitle {
+      margin: 0 0 8px;
+    }
 
-details.note {
-  margin: 0;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
+    .meta {
+      margin: 0;
+    }
 
-details.note:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
-}
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
 
-summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
 
-summary::-webkit-details-marker {
-  display: none;
-}
+    .nav a:hover {
+      color: var(--text);
+    }
 
-.summary-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-}
+    main {
+      padding: 26px 0 64px;
+    }
 
-.note-title,
-.note-meta {
-  display: block;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
+    .section {
+      margin-top: 42px;
+    }
 
-.note-title {
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text);
-}
+    .section:first-child {
+      margin-top: 0;
+    }
 
-.note-meta {
-  font-size: 0.82rem;
-  line-height: 1.2;
-  color: #9a9a9a;
-}
+    .section-title {
+      font-size: 1.1rem;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
 
-.icon {
-  flex-shrink: 0;
-  color: var(--muted);
-  font-size: 1.25rem;
-  line-height: 1;
-  transition: transform 0.25s ease, color 0.25s ease;
-}
+    .about-card,
+    .references-card,
+    .fragments-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
 
-details[open] .icon {
-  transform: rotate(45deg);
-  color: var(--text);
-}
+    .about-text {
+      margin: 0;
+      text-align: left;
+    }
 
-.note-content {
-  padding: 0 24px 24px;
-  border-top: 1px solid var(--line);
-  white-space: pre-line;
-  text-align: left;
-  animation: fadeDown 0.25s ease;
-}
+    .notes {
+      display: grid;
+      gap: 8px;
+    }
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    details.note {
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
 
-footer {
-  padding: 22px 0 56px;
-  color: var(--muted);
-}
+    details.note:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+
+    .note-title,
+    .note-meta {
+      display: block;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+
+    .note-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .note-meta {
+      font-size: 0.82rem;
+      line-height: 1.2;
+      color: var(--muted-light);
+    }
+
+    .icon {
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    details[open] .icon {
+      transform: rotate(45deg);
+      color: var(--text);
+    }
+
+    .note-content {
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--line);
+      white-space: pre-line;
+      text-align: left;
+      animation: fadeDown 0.25s ease;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .references-list,
+    .fragments-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .reference-item,
+    .fragment-item {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .reference-item:last-child,
+    .fragment-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .reference-type {
+      font-size: 0.82rem;
+      color: var(--muted-light);
+      margin-bottom: 4px;
+    }
+
+    .reference-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .reference-title a:hover {
+      opacity: 0.6;
+    }
+
+    .reference-note,
+    .fragment-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .fragment-quote {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    footer {
+      padding: 22px 0 56px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 52px 0 28px;
+      }
+
+      .about-card,
+      .references-card,
+      .fragments-card {
+        padding: 20px;
+      }
+
+      summary {
+        padding: 18px 20px;
+      }
+
+      .note-content {
+        padding: 0 20px 20px;
+      }
+
+      .nav {
+        gap: 14px;
+      }
+    }
   </style>
 </head>
 
@@ -167,23 +297,150 @@ footer {
         Mon espace personnel pour déposer des notes et des réflexions sur des sujets qui me tiennent à cœur.
       </p>
       <p class="meta">22 ans - Paris</p>
+
+      <nav class="nav">
+        <a href="#about">À propos</a>
+        <a href="#notes">Notes</a>
+        <a href="#references">Références</a>
+        <a href="#fragments">Fragments</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <div class="notes">
 
+      <section class="section" id="about">
+        <h2 class="section-title">À propos</h2>
+        <div class="about-card">
+          <p class="about-text">
+            Je m’appelle Antoine. J’écris ici des notes personnelles, des réflexions et des fragments autour de sujets
+            qui me traversent : le temps, l’excès, la discipline, la performance, le rapport à soi, au corps, aux
+            objectifs. Ce site est un espace sobre où je pose des mots sur ce que je ressens, ce que je pense et ce
+            que j’essaie de comprendre.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="notes">
+        <h2 class="section-title">Notes</h2>
+        <div class="notes">
+        
         <details class="note">
-          <summary>
-            <div class="summary-left">
-              <span class="note-title">Tout dans l'excès</span>
-              <span class="note-meta">Note personnelle - avril 2026</span>
-            </div>
-            <span class="icon">+</span>
-          </summary>
+            <summary>
+              <div class="summary-left">
+                <span class="note-title">Le poids de l'attachement</span>
+                <span class="note-meta">Note personnelle - Novembre 2025</span>
+              </div>
+              <span class="icon">+</span>
+            </summary>
 
-          <div class="note-content">
+            <div class="note-content">
+              
+J’ai constamment pourchassé des rêves qui s’effaçaient au moment même où je les touchais.
+
+J’ai longtemps cru, naïvement, que je serais plus heureux quand je serais plus fort.
+
+Mais à chaque progrès, rien.
+Rien de durable.
+Même pas un vrai sentiment de joie, de fierté. Rien.
+
+Je reste toujours, encore, le même qu’avant.
+
+Et le seul mérite visible que j’en tire, c’est une vidéo à montrer à mes proches, pour dire :
+« Voilà ce ce que j’ai réussi à faire. »
+
+En réalité, j’ai menti.
+
+Oui, sur le moment, je suis fier.
+
+Mais c’est toujours pareil.
+Je suis fier pendant l’instant où je le fais, pendant l’instant où l’effort est encore proche, encore vivant dans mon corps.
+
+Puis tout cela devient dérisoire.
+
+La figure finit par devenir banale, ordinaire, et la saveur s’efface avec elle.
+
+Alors je recommence.
+
+Je m’entraîne encore, sans jamais vraiment savourer.
+Je cours après un sentiment que je ne retrouve plus, dans une quête sans fin du toujours plus.
+
+À chaque réussite, je passe déjà à la suivante.
+
+Je deviens prisonnier de cette addiction à l’idée de progresser, dépendant de ce sentiment d’attachement que j’accorde à mon propre ego et à mes propres efforts.
+
+« J’ai réussi ça.
+Je suis meilleur qu’avant.
+Je peux faire encore plus. »
+
+Mais lorsque ma performance n’est pas à la hauteur de mes attentes, je déprime.
+
+Je me sens nul.
+Je me dis que je n’y arrive plus.
+
+Et tout s’écroule : la confiance, la motivation, la perception de moi-même.
+Comme un poids qui me tombe dessus.
+
+Jusqu’au jour où j’ai réalisé quelque chose.
+
+Le plus grand poids qu’on porte, c’est celui de l’attachement.
+
+Apprends à lâcher, et tu deviendras léger.
+
+Se libérer de ses croyances, de ce qu’on croit mériter, de ce qu’on pense avoir accompli.
+
+Être reconnaissant, simplement.
+
+Chaque figure n’est qu’une conséquence logique d’un enchaînement d’efforts.
+
+Elle ne définit ni qui je suis, ni ce que vaut ma pratique.
+
+Elle existe, simplement, de manière factuelle.
+Elle témoigne seulement d’un travail fourni à un moment donné.
+
+Parce qu’à chaque fois que j’arrive à l’entraînement avec des attentes, je suis déçu.
+
+Mais quand j’y vais sans rien attendre en retour, je fais, juste.
+
+Et le simple fait de faire, sans penser à ce que j’ai réussi, à ce que j’ai raté, à ce que je pourrais améliorer, à ce que l’autre fait de mieux, me procure tellement plus de plaisir.
+
+Voilà tout le paradoxe du street workout, et de l’amour que j’ai pour lui.
+
+Il m’aide à trouver un sens à ma vie, sans même qu’il y ait de sens.
+
+C’est là toute la beauté.
+
+Il n’y a rien à la clé.
+
+Il m’aide seulement à me libérer de ma condition.
+
+All my life I worked toward this goal… and for what?
+
+Certains cherchent la reconnaissance.
+Moi, je cherche la paix.
+
+Je ne m’entraîne pas pour être le meilleur.
+Je m’entraîne pour être libre de tout ce qui m’alourdit.
+
+Parce qu’au fond, ce n’est pas le résultat qui m’attache.
+C’est le chemin que j’ai dû parcourir pour l’atteindre.
+
+Et c’est justement pour ça que je pourrais tout recommencer.
+Encore, et encore.            
+            </div>
+          </details>  
+
+          <details class="note">
+            <summary>
+              <div class="summary-left">
+                <span class="note-title">Tout dans l'excès</span>
+                <span class="note-meta">Note personnelle - avril 2026</span>
+              </div>
+              <span class="icon">+</span>
+            </summary>
+
+            <div class="note-content">
 Je fonctionne dans l’excès.
 
 Toujours dans le feu de l’action, incapable de vraiment me poser.
@@ -262,19 +519,19 @@ Et c’est toujours pareil. Je suis coincé dans une spirale. Une spirale qui me
 
 Parce que le problème n’est pas l’objectif. C’est ma manière de fonctionner :
 Tout dans l’excès
-          </div>
-        </details>
-
-        <details class="note">
-          <summary>
-            <div class="summary-left">
-              <span class="note-title">Une journée parfaite</span>
-              <span class="note-meta">Note personnelle - avril 2026</span>
             </div>
-            <span class="icon">+</span>
-          </summary>
+          </details>
 
-          <div class="note-content">
+          <details class="note">
+            <summary>
+              <div class="summary-left">
+                <span class="note-title">Une journée parfaite</span>
+                <span class="note-meta">Note personnelle - avril 2026</span>
+              </div>
+              <span class="icon">+</span>
+            </summary>
+
+            <div class="note-content">
 J’essaie de bien dormir.
 Neuf heures me suffisent.
 
@@ -359,19 +616,19 @@ Mon cerveau tourne encore, il repense à l’entraînement.
 Parfois, je prends de la mélatonine.
 Parce que j’essaie de bien dormir.
 Neuf heures, au moins.
-          </div>
-        </details>
-        
-        <details class="note">
-          <summary>
-            <div class="summary-left">
-              <span class="note-title">J'ai peur du temps</span>
-              <span class="note-meta">Note personnelle - avril 2026</span>
             </div>
-            <span class="icon">+</span>
-          </summary>
+          </details>
 
-          <div class="note-content">
+          <details class="note">
+            <summary>
+              <div class="summary-left">
+                <span class="note-title">J'ai peur du temps</span>
+                <span class="note-meta">Note personnelle - avril 2026</span>
+              </div>
+              <span class="icon">+</span>
+            </summary>
+
+            <div class="note-content">
 J’ai peur du temps.
 
 Quand je ne fais rien, le temps passe et j’ai l’impression de le perdre.
@@ -433,10 +690,89 @@ Et même si j’ai ce sentiment de perdre mon temps, au fond, j’en prends cons
 Je pose des mots dessus.
 
 Et ça me fait du bien.
-          </div>
-        </details>
+            </div>
+          </details>
 
-      </div>
+        </div>
+      </section>
+
+      <section class="section" id="references">
+        <h2 class="section-title">Références</h2>
+        <div class="references-card">
+          <div class="references-list">
+
+            <div class="reference-item">
+              <div class="reference-type">Vidéo</div>
+              <div class="reference-title">
+                <a href="https://www.youtube.com/watch?v=0qk_aL-2Q38" target="_blank"> 
+                  Matteo Era — Tout, ou rien.
+                  </a>
+                  </div>
+              <div class="reference-note">Vidéo qui m'a inspiré à écrire la note : Tout dans l'excès.</div>
+            </div>
+            
+            <div class="reference-item">
+              <div class="reference-type">Vidéo</div>
+              <div class="reference-title">
+                <a href="https://www.youtube.com/watch?v=xEM4Gnr1K3k" target="_blank">
+                  Matteo Era — Un esprit fort vu d'un oeil faible.
+                </a>
+                </div>
+              <div class="reference-note">Vidéo dans laquelle je me suis reconnu.</div>
+            </div>
+            
+            <div class="reference-item">
+              <div class="reference-type">Vidéo</div>
+              <div class="reference-title">Aloïs — Le point d'équilibre ?</div>
+              <div class="reference-note">Trouver le point d'équilibre</div>
+            </div>
+            
+            <div class="reference-item">
+              <div class="reference-type">Podcast</div>
+              <div class="reference-title">Matt Breizh - CALIVOLUTION</div>
+              <div class="reference-note">Spotify</div>
+            </div>
+
+            <div class="reference-item">
+              <div class="reference-type">Livre</div>
+              <div class="reference-title">Épicure - Lettre à ménécée</div>
+              <div class="reference-note">Doctrine de l'épicurisme pour avoir une vie heureuse</div>
+            </div>
+
+            <div class="reference-item">
+              <div class="reference-type">Personnalité</div>
+              <div class="reference-title">Luc Ferry</div>
+              <div class="reference-note">Philosphe moderne qui a inspiré grand nombre de mes réflexions</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="fragments">
+        <h2 class="section-title">Fragments</h2>
+        <div class="fragments-card">
+          <div class="fragments-list">
+
+            <div class="fragment-item">
+              <div class="fragment-quote">“All my life I work toward this goal and for what ?”</div>
+              <div class="fragment-note">godofstatics</div>
+            </div>
+
+            <div class="fragment-item">
+              <div class="fragment-quote">“La liberté commence quand tu arrêtes de courir après ce que tu crois mériter”</div>
+              <div class="fragment-note">Valentin OTZ</div>
+            </div>
+
+            <div class="fragment-item">
+              <div class="fragment-quote">“La seule chose qui nous est permis de faire est de ne pas regretter les choix que l'on a fait”</div>
+              <div class="fragment-note">Livaï Ackerman - Extrait de l'attaque des titans</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -447,4 +783,5 @@ Et ça me fait du bien.
   </footer>
 
 </body>
+
 </html>
