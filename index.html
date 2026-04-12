@@ -8,93 +8,153 @@
 
   <style>
     :root {
-      --bg: #f7f7f5;
-      --card: #ffffff;
-      --text: #1f1f1f;
-      --muted: #6b6b6b;
-      --line: #e8e8e4;
-      --hover: #f1f1ed;
-      --max: 860px;
-      --radius: 18px;
-    }
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --text: #1f1f1f;
+  --muted: #6b6b6b;
+  --line: #e8e8e4;
+  --hover: #f1f1ed;
+  --max: 860px;
+  --radius: 18px;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
 
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
+.container {
+  width: min(calc(100% - 32px), var(--max));
+  margin: 0 auto;
+}
 
-    header {
-      padding: 72px 0 36px;
-    }
+header {
+  padding: 72px 0 36px;
+}
 
-    .intro {
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 28px;
-    }
+.intro {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 28px;
+}
 
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      margin: 0 0 10px;
-    }
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  margin: 0 0 10px;
+}
 
-    .subtitle,
-    .meta {
-      color: var(--muted);
-    }
+.subtitle,
+.meta {
+  color: var(--muted);
+}
 
-    main {
-      padding: 26px 0 64px;
-    }
+main {
+  padding: 26px 0 64px;
+}
 
-    .notes {
-      display: grid;
-      gap: 8px;
-    }
+.notes {
+  display: grid;
+  gap: 8px;
+}
 
-    details.note {
-      margin: 0;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
+details.note {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
 
-    summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+details.note:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+}
 
-    summary::-webkit-details-marker {
-      display: none;
-    }
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
 
-    .note-content {
-      padding: 0 24px 24px;
-      border-top: 1px solid var(--line);
-      white-space: pre-line;
-      text-align: left;
-    }
+summary::-webkit-details-marker {
+  display: none;
+}
 
-    footer {
-      padding: 22px 0 56px;
-      color: var(--muted);
-    }
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.note-title,
+.note-meta {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.note-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.note-meta {
+  font-size: 0.82rem;
+  line-height: 1.2;
+  color: #9a9a9a;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+details[open] .icon {
+  transform: rotate(45deg);
+  color: var(--text);
+}
+
+.note-content {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--line);
+  white-space: pre-line;
+  text-align: left;
+  animation: fadeDown 0.25s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  padding: 22px 0 56px;
+  color: var(--muted);
+}
   </style>
 </head>
 
@@ -116,8 +176,11 @@
 
         <details class="note">
           <summary>
-            <span>Tout dans l'excès</span>
-            <span>+</span>
+            <div class="summary-left">
+              <span class="note-title">Tout dans l'excès</span>
+              <span class="note-meta">Note personnelle - avril 2026</span>
+            </div>
+            <span class="icon">+</span>
           </summary>
 
           <div class="note-content">
@@ -204,8 +267,11 @@ Tout dans l’excès
 
         <details class="note">
           <summary>
-            <span>Une journée parfaite</span>
-            <span>+</span>
+            <div class="summary-left">
+              <span class="note-title">Une journée parfaite</span>
+              <span class="note-meta">Note personnelle - avril 2026</span>
+            </div>
+            <span class="icon">+</span>
           </summary>
 
           <div class="note-content">
@@ -298,8 +364,11 @@ Neuf heures, au moins.
         
         <details class="note">
           <summary>
-            <span>J'ai peur du temps</span>
-            <span>+</span>
+            <div class="summary-left">
+              <span class="note-title">J'ai peur du temps</span>
+              <span class="note-meta">Note personnelle - avril 2026</span>
+            </div>
+            <span class="icon">+</span>
           </summary>
 
           <div class="note-content">
