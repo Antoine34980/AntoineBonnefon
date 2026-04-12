@@ -74,11 +74,82 @@
       margin-top: 22px;
     }
 
-    .nav a {
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      align-items: center;
+    }
+
+    .nav a,
+    .nav-link {
       color: var(--muted);
       text-decoration: none;
       font-size: 0.95rem;
       transition: color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+     align-items: center;
+    }
+
+    /* zone invisible pour relier le lien au menu */
+    .nav-dropdown::after {
+     content: "";
+      position: absolute;
+     left: 0;
+     top: 100%;
+     width: 100%;
+      height: 14px;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+     left: 0;
+      min-width: 180px;
+      background: var(--card);
+     border: 1px solid var(--line);
+     border-radius: 14px;
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      pointer-events: none;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+     z-index: 10;
+     transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: var(--hover);
+      color: var(--text);
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+     opacity: 1;
+      visibility: visible;
+     transform: translateY(0);
+     pointer-events: auto;
     }
 
     .nav a:hover {
@@ -115,6 +186,7 @@
     .about-text {
       margin: 0;
       text-align: left;
+      white-space: pre-line;
     }
 
     .notes {
@@ -250,6 +322,26 @@
       color: var(--muted);
       font-size: 0.95rem;
     }
+    
+    .reference-section-title {
+      font-size: 1rem;
+      margin: 0 0 14px;
+      color: var(--text);
+    }
+
+    .sub-reference-card {
+     margin-top: 16px;
+    }
+
+    .reference-title a {
+     color: var(--text);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .reference-title a:hover {
+      opacity: 0.65;
+    }
 
     .fragment-quote {
       font-size: 1rem;
@@ -301,9 +393,19 @@
       <nav class="nav">
         <a href="#about">À propos</a>
         <a href="#notes">Notes</a>
-        <a href="#references">Références</a>
-        <a href="#fragments">Fragments</a>
-      </nav>
+
+        <div class="nav-dropdown">
+          <a href="#references" class="nav-link">Références</a>
+          <div class="dropdown-menu">
+            <a href="#references-videos">Vidéos</a>
+            <a href="#references-podcasts">Podcasts</a>
+            <a href="#references-livres">Livres</a>
+            <a href="#references-personnalites">Personnalités</a>
+          </div>
+        </div>
+
+  <a href="#fragments">Fragments</a>
+</nav>
     </div>
   </header>
 
@@ -314,10 +416,20 @@
         <h2 class="section-title">À propos</h2>
         <div class="about-card">
           <p class="about-text">
-            Je m’appelle Antoine. J’écris ici des notes personnelles, des réflexions et des fragments autour de sujets
-            qui me traversent : le temps, l’excès, la discipline, la performance, le rapport à soi, au corps, aux
-            objectifs. Ce site est un espace sobre où je pose des mots sur ce que je ressens, ce que je pense et ce
-            que j’essaie de comprendre.
+J’ai cette envie profonde de devenir une meilleure personne, au niveau professionnel, relationnel et personnel.
+
+J’essaie de m’améliorer, chaque jour.
+Et parfois, ça passe simplement par écrire les pensées qui me traversent.
+
+Ce site est un endroit où je pose des mots,
+où je prends du recul,
+où j’essaie de comprendre.
+
+Rien n’est vraiment structuré.
+
+Ce sont juste des pensées, des fragments, des moments.
+
+Et peut-être, au fond, une tentative de trouver un équilibre.
           </p>
         </div>
       </section>
@@ -696,58 +808,118 @@ Et ça me fait du bien.
         </div>
       </section>
 
-      <section class="section" id="references">
-        <h2 class="section-title">Références</h2>
-        <div class="references-card">
-          <div class="references-list">
+          <section class="section" id="references">
+      <h2 class="section-title">Références</h2>
 
-            <div class="reference-item">
-              <div class="reference-type">Vidéo</div>
-              <div class="reference-title">
-                <a href="https://www.youtube.com/watch?v=0qk_aL-2Q38" target="_blank"> 
-                  Matteo Era — Tout, ou rien.
-                  </a>
-                  </div>
-              <div class="reference-note">Vidéo qui m'a inspiré à écrire la note : Tout dans l'excès.</div>
-            </div>
-            
-            <div class="reference-item">
-              <div class="reference-type">Vidéo</div>
-              <div class="reference-title">
-                <a href="https://www.youtube.com/watch?v=xEM4Gnr1K3k" target="_blank">
-                  Matteo Era — Un esprit fort vu d'un oeil faible.
-                </a>
-                </div>
-              <div class="reference-note">Vidéo dans laquelle je me suis reconnu.</div>
-            </div>
-            
-            <div class="reference-item">
-              <div class="reference-type">Vidéo</div>
-              <div class="reference-title">Aloïs — Le point d'équilibre ?</div>
-              <div class="reference-note">Trouver le point d'équilibre</div>
-            </div>
-            
-            <div class="reference-item">
-              <div class="reference-type">Podcast</div>
-              <div class="reference-title">Matt Breizh - CALIVOLUTION</div>
-              <div class="reference-note">Spotify</div>
-            </div>
+      <!-- VIDÉOS -->
+      <div class="references-card" id="references-videos">
+        <h3 class="reference-section-title">Vidéos</h3>
+       <div class="references-list">
 
-            <div class="reference-item">
-              <div class="reference-type">Livre</div>
-              <div class="reference-title">Épicure - Lettre à ménécée</div>
-              <div class="reference-note">Doctrine de l'épicurisme pour avoir une vie heureuse</div>
-            </div>
+          <div class="reference-item">
+            <div class="reference-title">
+              <a href="https://www.youtube.com/watch?v=0qk_aL-2Q38" target="_blank" rel="noopener noreferrer">
+                Matteo Era - Tout, ou rien.
+              </a>
+           </div>
+           <div class="reference-note">Vidéo qui m'a inspiré à écrire la note : Tout dans l'excès.</div>
+         </div>
 
-            <div class="reference-item">
-              <div class="reference-type">Personnalité</div>
-              <div class="reference-title">Luc Ferry</div>
-              <div class="reference-note">Philosphe moderne qui a inspiré grand nombre de mes réflexions</div>
+         <div class="reference-item">
+           <div class="reference-title">
+             <a href="https://www.youtube.com/watch?v=xEM4Gnr1K3k" target="_blank" rel="noopener noreferrer">
+               Matteo Era - Un esprit fort vu d'un oeil faible.
+              </a>
             </div>
-
+           <div class="reference-note">Vidéo dans laquelle je me suis reconnu.</div>
           </div>
+
+          <div class="reference-item">
+           <div class="reference-title">
+              <a href="https://www.youtube.com/watch?v=1uStcVwqWSI&t=1s" target="_blank" rel="noopener noreferrer">
+                Aloïs - Le point d'équilibre ?
+              </a>
+            </div>
+           <div class="reference-note">Trouver le point d'équilibre</div>
+          </div>
+
         </div>
-      </section>
+      </div>
+
+      <!-- PODCASTS -->
+      <div class="references-card sub-reference-card" id="references-podcasts">
+        <h3 class="reference-section-title">Podcasts</h3>
+        <div class="references-list">
+
+          <div class="reference-item">
+           <div class="reference-title">
+              <a href="https://open.spotify.com/show/44TaNpjGon46EJFDX6eud0" target="_blank" rel="noopener noreferrer">
+                Matt Breizh - CALIVOLUTION
+             </a>
+           </div>
+            <div class="reference-note">Spotify</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LIVRES -->
+      <div class="references-card sub-reference-card" id="references-livres">
+       <h3 class="reference-section-title">Livres</h3>
+        <div class="references-list">
+
+          <div class="reference-item">
+            <div class="reference-title">Épicure - Lettre à Ménécée</div>
+            <div class="reference-note">Doctrine de l'épicurisme pour avoir une vie heureuse</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Marc Aurèle - Pensées</div>
+            <div class="reference-note">Réflexions courtes et introduction au stoïcisme</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Platon - Le banquet</div>
+            <div class="reference-note">Philosophie platonicienne sur l'amour</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Sénèque - Lettre à Lucilius</div>
+            <div class="reference-note">Philosophie stoïcienne</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Sénèque - De la brièveté de la vie</div>
+            <div class="reference-note">Nous naissons dans la perspective d'une trop courte existence</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Blaise Pascal - Pensées</div>
+            <div class="reference-note">Compilation inachevée de ses pensées</div>
+          </div>
+          
+          <div class="reference-item">
+            <div class="reference-title">Albert Jacquard - Petite philosophie à l'usage des non-philosophes</div>
+            <div class="reference-note">Albert Jacquard s'intéresse ici aux principales questions de la vie</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PERSONNALITÉS -->
+      <div class="references-card sub-reference-card" id="references-personnalites">
+        <h3 class="reference-section-title">Personnalités</h3>
+        <div class="references-list">
+
+         <div class="reference-item">
+            <div class="reference-title">Luc Ferry</div>
+           <div class="reference-note">Philosophe moderne qui a inspiré grand nombre de mes réflexions</div>
+         </div>
+
+       </div>
+      </div>
+
+    </section>
 
       <section class="section" id="fragments">
         <h2 class="section-title">Fragments</h2>
