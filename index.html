@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Antoine Bonnefon</title>
+
   <style>
     :root {
       --bg: #f7f7f5;
@@ -21,16 +22,12 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .container {
@@ -43,42 +40,22 @@
     }
 
     .intro {
-      background: transparent;
       border-bottom: 1px solid var(--line);
       padding-bottom: 28px;
     }
 
     h1 {
       font-size: clamp(2.2rem, 5vw, 3.8rem);
-      line-height: 1.05;
       margin: 0 0 10px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
     }
 
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0;
-    }
-
+    .subtitle,
     .meta {
-      margin-top: 14px;
       color: var(--muted);
-      font-size: 0.98rem;
     }
 
     main {
       padding: 26px 0 64px;
-    }
-
-    .section-title {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      margin: 0 0 18px;
     }
 
     .notes {
@@ -90,239 +67,268 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 0;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    details.note:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     }
 
     summary {
-      list-style: none;
       cursor: pointer;
-      padding: 22px 24px;
+      padding: 22px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .summary-left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .note-date {
-      font-size: 0.92rem;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .icon {
-      color: var(--muted);
-      font-size: 1.2rem;
-      transition: transform 0.2s ease;
-    }
-
-    details[open] .icon {
-      transform: rotate(45deg);
     }
 
     .note-content {
       padding: 0 24px 24px;
-      color: #2a2a2a;
       border-top: 1px solid var(--line);
-    }
 
-    .note-content p:first-child {
-      margin-top: 18px;
+      /* 🔥 LA LIGNE QUI CHANGE TOUT */
+      white-space: pre-line;
     }
 
     footer {
       padding: 22px 0 56px;
       color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 640px) {
-      header {
-        padding-top: 52px;
-      }
-
-      summary {
-        padding: 18px 18px;
-        font-size: 1.08rem;
-      }
-
-      .note-content {
-        padding: 0 18px 20px;
-      }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <div class="container intro">
       <h1>Antoine Bonnefon</h1>
       <p class="subtitle">
         Mon espace personnel pour déposer des notes et des réflexions sur des sujets qui me tiennent à cœur.
       </p>
-      <p class="meta">20 ans - Paris </p>
+      <p class="meta">20 ans - Paris</p>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <p class="section-title">Notes</p>
 
       <div class="notes">
-        <details class="note">
-          <summary>
-            <div class="summary-left">
-              <span>Tout dans l'excès</span>
-              <span class="note-date">Note personnelle</span>
-            </div>
-            <span class="icon">+</span>
-          </summary>
-          <div class="note-content">
-            <p>
-              Je fonctionne dans l’excès.
-
-              Toujours dans le feu de l’action, incapable de vraiment me poser.
-              Quand je ne fais rien, le temps passe et j’ai l’impression de le perdre. Cette idée me fait peur.
-
-              Les seuls moments où je me sens réellement bien sont ceux où je ne pense à rien.Quand je suis pleinement dans l’instant : avec des amis, autour d’un verre, d’un bon repas, en balade au soleil, à la plage, dans la nature.
-
-              Des moments simples, suspendus.Comme hors du temps.
-
-              Mais même là, quelque chose peut venir tout gâcher.
-              Je pense au futur, aux projets non finis, les problèmes à régler ou les objectifs qui me semblent encore loin.
-
-              Ces moments, pourtant parfaits, deviennent imparfaits. Souvent gâchés.
-
-              Puis vient le regret.
-              Le même que lorsqu’on sort trop tard, qu’on boit trop.
-              Pas à cause de ce que j’ai fait.
-              Mais parce que j’ai l’impression d’avoir perdu mon temps. Perdu mon temps de n’avoir rien fait. Toujours ce même problème de rapport au temps.
-
-              Avant, j’étais plus heureux.
-              Quand j’étais jeune, ignorant, insouciant. Je ne pensais pas au temps qui passe. Je n’avais pas de responsabilités.
-
-              Et au fond, je suis convaincu qu’être ignorant rend plus heureux.
-
-              La curiosité humaine empêche cet état. Elle m’a empêché de rester ignorant à propos du street workout.
-
-              Il y a trois ans, tu n’existais pas dans ma vie. Et avec du recul, je vivais mieux sans toi.
-
-              Maintenant, je suis bloqué. Bloqué dans une spirale qui m’obsède, me ronge, me fatigue.
-
-              Je suis devenu obsédé par la performance. Je veux tout optimiser : devenir fort en front, en planche.
-
-              Parce que je fais tout dans l’excès.
-
-              Et ce sport me résiste, plus que tout ce que j’ai connu.
-              Je n’ai jamais ressenti une résistance aussi forte malgré autant de travail et de dévouement.
-
-              Tout dans l’excès.
-              C’est exactement ça.
-
-              Je vis dans le tout ou le rien, dans cette ambivalence constante.
-              Et c’est pour ça que la vidéo de Matteo Era, « Tout ou rien », m’a marqué, je m’y suis reconnu.
-
-              Mon état dépend de mes performances.
-              Lorsque je suis fort à l’entraînement, je suis heureux.
-              Lorsque je me sens moins bien, je suis malheureux.
-
-              Ça va et ça vient, comme une relation toxique, une relation où il y a de l’espoir.
-              Un espoir suffisant pour se lever chaque matin. L’espoir que ça fonctionne un jour.
-              Accroc à ce sentiment d’inconfort, et aujourd’hui, il a été remplacé par le street workout.
-
-              Je fonctionne dans ce cycle. Toujours le même.
-
-              Tout commence par l’espoir.
-
-              Je me dis : Cette fois c’est la bonne. Cette fois je vais progresser. Atteindre ce que je vise.
-
-              Il y a quelque chose d’excitant là-dedans. Une tension positive, une attente.
-
-              Puis vient le pic, une bonne séance, une sensation de force.
-              Tout devient clair. Je suis fier. Je me sens aligné. Comme si tout avait du sens.
-
-              C’est presque euphorique. Pendant un instant, je me dis que j’ai trouvé.
-
-              Et puis ça retombe, sans prévenir.
-              Une mauvaise séance. Moins de force. Moins de contrôle et tout bascule.
-              Je doute. Je me sens nul et faible je me compare aux autres.
-
-              Ce n’est plus seulement une séance ratée, ça devient une remise en question.
-
-              Comme si tout ce que j’avais construit disparaissait.
-
-              Ensuite vient le manque. Pas le manque de performance. Le manque du pic.
-
-              Je ne veux pas juste progresser. Je veux retrouver cette sensation.
-
-              Ce moment où tout allait bien. Où je me sentais fort.
-
-              Et c’est là que je retombe dedans, je repars. Nouvel espoir. Nouvelle projection dans mes objectifs Et le cycle recommence.
-
-              Ce qui me piège, ce n’est pas seulement la chute, c’est l’alternance. Les hauts me rendent dépendant. Les bas me poussent à continuer. Comme dans une relation toxique : les bons moments créent l’attachement les mauvais moments créent le manque. Et au milieu, je reste accroché. Ça peut paraître irrationnel pour quelqu’un d’extérieur à la pratique, mais ce chemin intérieur, ce sport, a pris cette place.
-
-              J’ai essayé d’avoir une relation stable. Elle n’a pas tenu. Parce que je suis dans l’excès. Jamais satisfait. J’en veux toujours plus.
-
-              Et les situations stables me font peur. Comme le temps qui passe.
-
-              Après ma rupture, le street workout a tout remplacé. Chaque jour, j’avais qu’un seul objectif : devenir plus fort. Je suis resté dans le feu de l’action, sans pause. Parce que m’arrêter me fait peur. Peur de perdre mon niveau, peur de ne pas atteindre mes objectifs.
-              Mais au fond, je le sais : Ces objectifs ne me rendront pas plus heureux. Parce que je fonctionne dans l’excès, j'en voudrai toujours plus.
-
-              Je l’ai déjà vécu. J’ai rêvé du front lever, une fois obtenu, rien.
-              J’ai rêvé du one arm, une fois obtenu, rien.
-              J’ai rêvé de la planche, une fois obtenue, rien.
-              Et c’est toujours pareil. Je suis coincé dans une spirale. Une spirale qui me donne des pics de bonheur, puis des chutes violentes de frustration et de tristesse.
-              Une spirale où tout dépend de mon niveau. Et derrière tout ça, toujours cette peur : Le temps qui passe. Ce temps qui m’éloigne, lentement, de mon objectif de devenir plus fort. Je cours après quelque chose qui ne m’apaisera jamais.
-              Parce que le problème n’est pas l’objectif. C’est ma manière de fonctionner :
-              Tout dans l’excès
-            </p>
-          </div>
-        </details>
 
         <details class="note">
           <summary>
-            <div class="summary-left">
-              <span>J'ai peur du temps</span>
-              <span class="note-date">Note personnelle</span>
-            </div>
-            <span class="icon">+</span>
+            <span>Tout dans l'excès</span>
+            <span>+</span>
           </summary>
+
           <div class="note-content">
-            <p>
-              Texte à écrire.
-            </p>
-            <p>
-              Cette section pourra accueillir ta note complète, avec plusieurs paragraphes si tu le souhaites.
-            </p>
+Je fonctionne dans l’excès.
+
+Toujours dans le feu de l’action, incapable de vraiment me poser.
+Quand je ne fais rien, le temps passe et j’ai l’impression de le perdre. Cette idée me fait peur.
+
+Les seuls moments où je me sens réellement bien sont ceux où je ne pense à rien.Quand je suis pleinement dans l’instant : avec des amis, autour d’un verre, d’un bon repas, en balade au soleil, à la plage, dans la nature.
+
+Des moments simples, suspendus.Comme hors du temps.
+
+Mais même là, quelque chose peut venir tout gâcher.
+Je pense au futur, aux projets non finis, les problèmes à régler ou les objectifs qui me semblent encore loin.
+
+Ces moments, pourtant parfaits, deviennent imparfaits. Souvent gâchés.
+
+Puis vient le regret.
+Le même que lorsqu’on sort trop tard, qu’on boit trop.
+Pas à cause de ce que j’ai fait.
+Mais parce que j’ai l’impression d’avoir perdu mon temps. Perdu mon temps de n’avoir rien fait. Toujours ce même problème de rapport au temps.
+
+Avant, j’étais plus heureux.
+Quand j’étais jeune, ignorant, insouciant. Je ne pensais pas au temps qui passe. Je n’avais pas de responsabilités.
+
+Et au fond, je suis convaincu qu’être ignorant rend plus heureux.
+
+La curiosité humaine empêche cet état. Elle m’a empêché de rester ignorant à propos du street workout.
+
+Il y a trois ans, tu n’existais pas dans ma vie. Et avec du recul, je vivais mieux sans toi.
+
+Maintenant, je suis bloqué. Bloqué dans une spirale qui m’obsède, me ronge, me fatigue.
+
+Je suis devenu obsédé par la performance. Je veux tout optimiser : devenir fort en front, en planche.
+
+Parce que je fais tout dans l’excès.
+
+Et ce sport me résiste, plus que tout ce que j’ai connu.
+Je n’ai jamais ressenti une résistance aussi forte malgré autant de travail et de dévouement.
+
+Tout dans l’excès.
+C’est exactement ça.
+
+Je vis dans le tout ou le rien, dans cette ambivalence constante.
+Et c’est pour ça que la vidéo de Matteo Era, « Tout ou rien », m’a marqué, je m’y suis reconnu.
+
+Mon état dépend de mes performances.
+Lorsque je suis fort à l’entraînement, je suis heureux.
+Lorsque je me sens moins bien, je suis malheureux.
+
+Ça va et ça vient, comme une relation toxique, une relation où il y a de l’espoir.
+Un espoir suffisant pour se lever chaque matin. L’espoir que ça fonctionne un jour.
+Accroc à ce sentiment d’inconfort, et aujourd’hui, il a été remplacé par le street workout.
+
+Je fonctionne dans ce cycle. Toujours le même.
+
+Tout commence par l’espoir.
+
+Je me dis : Cette fois c’est la bonne. Cette fois je vais progresser. Atteindre ce que je vise.
+
+Il y a quelque chose d’excitant là-dedans. Une tension positive, une attente.
+
+Puis vient le pic, une bonne séance, une sensation de force.
+Tout devient clair. Je suis fier. Je me sens aligné. Comme si tout avait du sens.
+
+C’est presque euphorique. Pendant un instant, je me dis que j’ai trouvé.
+
+Et puis ça retombe, sans prévenir.
+Une mauvaise séance. Moins de force. Moins de contrôle et tout bascule.
+Je doute. Je me sens nul et faible je me compare aux autres.
+
+Ce n’est plus seulement une séance ratée, ça devient une remise en question.
+
+Comme si tout ce que j’avais construit disparaissait.
+
+Ensuite vient le manque. Pas le manque de performance. Le manque du pic.
+
+Je ne veux pas juste progresser. Je veux retrouver cette sensation.
+
+Ce moment où tout allait bien. Où je me sentais fort.
+
+Et c’est là que je retombe dedans, je repars. Nouvel espoir. Nouvelle projection dans mes objectifs Et le cycle recommence.
+
+Ce qui me piège, ce n’est pas seulement la chute, c’est l’alternance. Les hauts me rendent dépendant. Les bas me poussent à continuer. Comme dans une relation toxique : les bons moments créent l’attachement les mauvais moments créent le manque. Et au milieu, je reste accroché. Ça peut paraître irrationnel pour quelqu’un d’extérieur à la pratique, mais ce chemin intérieur, ce sport, a pris cette place.
+
+J’ai essayé d’avoir une relation stable. Elle n’a pas tenu. Parce que je suis dans l’excès. Jamais satisfait. J’en veux toujours plus.
+
+Et les situations stables me font peur. Comme le temps qui passe.
+
+Après ma rupture, le street workout a tout remplacé. Chaque jour, j’avais qu’un seul objectif : devenir plus fort. Je suis resté dans le feu de l’action, sans pause. Parce que m’arrêter me fait peur. Peur de perdre mon niveau, peur de ne pas atteindre mes objectifs.
+Mais au fond, je le sais : Ces objectifs ne me rendront pas plus heureux. Parce que je fonctionne dans l’excès, j'en voudrai toujours plus.
+
+Je l’ai déjà vécu. J’ai rêvé du front lever, une fois obtenu, rien.
+J’ai rêvé du one arm, une fois obtenu, rien.
+J’ai rêvé de la planche, une fois obtenue, rien.
+Et c’est toujours pareil. Je suis coincé dans une spirale. Une spirale qui me donne des pics de bonheur, puis des chutes violentes de frustration et de tristesse.
+Une spirale où tout dépend de mon niveau. Et derrière tout ça, toujours cette peur : Le temps qui passe. Ce temps qui m’éloigne, lentement, de mon objectif de devenir plus fort. Je cours après quelque chose qui ne m’apaisera jamais.
+Parce que le problème n’est pas l’objectif. C’est ma manière de fonctionner :
+Tout dans l’excès
           </div>
+
         </details>
+
       </div>
     </div>
   </main>
 
+ <main>
+    <div class="container">
+
+      <div class="notes">
+
+        <details class="note">
+          <summary>
+            <span>Une journée parfaite</span>
+            <span>+</span>
+          </summary>
+
+          <div class="note-content">
+J’essaie de bien dormir.
+Neuf heures me suffisent.
+
+Je me lève, j’ouvre les volets. La lumière entre.
+Je bois un grand verre d’eau, avec vitamines et magnésium.
+Puis je me passe de l’eau froide sur le visage. Beaucoup d’eau froide.
+Je me sens éveillé.
+
+Déodorant, parfum, brossage de dents.
+
+Je m’habille. J’essaie d’avoir un style qui me plaît, qui correspond à mon humeur du moment.
+Je sors marcher, profiter du soleil, de l’air frais.
+Je fais quelques courses. J’ai ce besoin de dépenser de l'argent.
+
+Je rentre, je prends un café avec une clémentine.
+À peine le temps de faire mon activation matinale que j’ai déjà envie de cuisiner.
+
+Mon plat est prêt. Je ne mange pas trop tard, je sais que j’aurai besoin de digérer pour bien m’entraîner.
+Je termine par une part de gâteau au chocolat, puis un deuxième café.
+Je suis accroc à cette sensation de caféine.
+
+Je me prépare mentalement.
+Je visualise mon entraînement.
+
+Je me pose, je me change, je prépare mes affaires.
+Puis je pars au parc de street.
+
+Dehors, le soleil réchauffe mon corps.
+La musique me motive.
+La séance s’annonce intense.
+
+J’optimise tout.
+Je veux être prêt, mentalement et physiquement, pour ma première planche.
+J’ai besoin de retrouver cette intensité.
+
+En ce moment, je planche.
+
+Je suis dans une période où j’ai besoin de pousser.
+Pousser plus fort. Pousser plus haut.
+Repousser la gravité qui me tire vers le sol.
+
+Je fais moins de front lever.
+Je n’ai plus besoin de tirer vers moi, de garder mes problèmes.
+
+J’ai envie de m’exprimer.
+D’aller de l’avant.
+De passer des étapes.
+
+Et c’est exactement ce que la planche me permet d'exprimer.
+
+La dernière planche de la séance me vide.
+Comme si tout mon système nerveux se relâchait d’un coup.
+
+Je rentre en repensant à mes essais.
+Je regarde mes vidéos, j’analyse mes formes.
+Ça me donne envie de recommencer demain.
+
+Je rentre fatigué.
+Je prends ma douche.
+
+Je cuisine, puis je mange.
+Souvent devant une vidéo.
+
+Je termine par un bol de fromage blanc avec du chocolat noir.
+Minimum 90%.
+
+Je suis content de cette journée.
+
+Je n’ai vu personne.
+Je me suis concentré sur moi, sur mes objectifs.
+Et c’est comme ça que je me sens le plus heureux.
+
+Mais je me rends compte que je deviens rigide.
+Je ne laisse plus de place à l’imprévu.
+
+Je n’aimerais pas que quelque chose, ou quelqu’un, vienne perturber cet équilibre.
+Et les jours qui ne ressemblent pas à ça, je me sens mal.
+
+Le soir, je ne trouve pas toujours le sommeil.
+Mon cerveau tourne encore, il repense à l’entraînement.
+
+Parfois, je prends de la mélatonine.
+Parce que j’essaie de bien dormir.
+Neuf heures, au moins.
+          </div>
+
+        </details>
+
+      </div>
+    </div>
+  </main>
+  
   <footer>
     <div class="container">
       Site personnel — process en cours.
     </div>
   </footer>
-</body>
 
+</body>
 </html>
