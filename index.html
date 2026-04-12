@@ -60,10 +60,11 @@
 
     .notes {
       display: grid;
-      gap: 16px;
+      gap: 8px;
     }
 
     details.note {
+      margin: 0;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -71,18 +72,23 @@
     }
 
     summary {
+      list-style: none;
       cursor: pointer;
       padding: 22px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
     }
 
     .note-content {
       padding: 0 24px 24px;
       border-top: 1px solid var(--line);
-
-      /* 🔥 LA LIGNE QUI CHANGE TOUT */
       white-space: pre-line;
+      text-align: left;
     }
 
     footer {
@@ -100,13 +106,12 @@
       <p class="subtitle">
         Mon espace personnel pour déposer des notes et des réflexions sur des sujets qui me tiennent à cœur.
       </p>
-      <p class="meta">20 ans - Paris</p>
+      <p class="meta">22 ans - Paris</p>
     </div>
   </header>
 
   <main>
     <div class="container">
-
       <div class="notes">
 
         <details class="note">
@@ -119,32 +124,17 @@
 Je fonctionne dans l’excès.
 
 Toujours dans le feu de l’action, incapable de vraiment me poser.
-Quand je ne fais rien, le temps passe et j’ai l’impression de le perdre. Cette idée me fait peur.
 
-Les seuls moments où je me sens réellement bien sont ceux où je ne pense à rien.Quand je suis pleinement dans l’instant : avec des amis, autour d’un verre, d’un bon repas, en balade au soleil, à la plage, dans la nature.
+Les seuls moments où je me sens réellement bien sont ceux où je ne pense à rien. Quand je suis pleinement dans l’instant : avec des amis, autour d’un verre, d’un bon repas, en balade au soleil, à la plage, dans la nature.
 
-Des moments simples, suspendus.Comme hors du temps.
+Des moments simples, suspendus, comme hors du temps.
 
 Mais même là, quelque chose peut venir tout gâcher.
 Je pense au futur, aux projets non finis, les problèmes à régler ou les objectifs qui me semblent encore loin.
 
 Ces moments, pourtant parfaits, deviennent imparfaits. Souvent gâchés.
 
-Puis vient le regret.
-Le même que lorsqu’on sort trop tard, qu’on boit trop.
-Pas à cause de ce que j’ai fait.
-Mais parce que j’ai l’impression d’avoir perdu mon temps. Perdu mon temps de n’avoir rien fait. Toujours ce même problème de rapport au temps.
-
-Avant, j’étais plus heureux.
-Quand j’étais jeune, ignorant, insouciant. Je ne pensais pas au temps qui passe. Je n’avais pas de responsabilités.
-
-Et au fond, je suis convaincu qu’être ignorant rend plus heureux.
-
-La curiosité humaine empêche cet état. Elle m’a empêché de rester ignorant à propos du street workout.
-
-Il y a trois ans, tu n’existais pas dans ma vie. Et avec du recul, je vivais mieux sans toi.
-
-Maintenant, je suis bloqué. Bloqué dans une spirale qui m’obsède, me ronge, me fatigue.
+Souvent gâchés par cette idée que le simple fait de dévier de routine habituelle m'éloignera de mes performances en street workout.
 
 Je suis devenu obsédé par la performance. Je veux tout optimiser : devenir fort en front, en planche.
 
@@ -165,65 +155,52 @@ Lorsque je me sens moins bien, je suis malheureux.
 
 Ça va et ça vient, comme une relation toxique, une relation où il y a de l’espoir.
 Un espoir suffisant pour se lever chaque matin. L’espoir que ça fonctionne un jour.
-Accroc à ce sentiment d’inconfort, et aujourd’hui, il a été remplacé par le street workout.
+Accroc à ce sentiment d’inconfort.
 
 Je fonctionne dans ce cycle. Toujours le même.
 
 Tout commence par l’espoir.
 
-Je me dis : Cette fois c’est la bonne. Cette fois je vais progresser. Atteindre ce que je vise.
+Je me dis : Cette fois c’est la bonne, cette fois je vais progresser, atteindre ce que je vise.
 
 Il y a quelque chose d’excitant là-dedans. Une tension positive, une attente.
 
 Puis vient le pic, une bonne séance, une sensation de force.
-Tout devient clair. Je suis fier. Je me sens aligné. Comme si tout avait du sens.
-
-C’est presque euphorique. Pendant un instant, je me dis que j’ai trouvé.
+Tout devient clair. Je suis fier, je me sens aligné, comme si tout avait du sens.
 
 Et puis ça retombe, sans prévenir.
-Une mauvaise séance. Moins de force. Moins de contrôle et tout bascule.
-Je doute. Je me sens nul et faible je me compare aux autres.
+Une mauvaise séance. Moins de force, moins de contrôle et tout bascule.
+Je doute, je me sens nul, faible, je me compare aux autres.
 
 Ce n’est plus seulement une séance ratée, ça devient une remise en question.
-
 Comme si tout ce que j’avais construit disparaissait.
 
-Ensuite vient le manque. Pas le manque de performance. Le manque du pic.
-
+Ensuite vient le manque. Pas le manque de performance, le manque du pic.
 Je ne veux pas juste progresser. Je veux retrouver cette sensation.
-
 Ce moment où tout allait bien. Où je me sentais fort.
 
-Et c’est là que je retombe dedans, je repars. Nouvel espoir. Nouvelle projection dans mes objectifs Et le cycle recommence.
+Et c’est là que je retombe dedans, je repars : Nouvel espoir, nouvelle projection dans mes objectifs et le cycle recommence.
 
-Ce qui me piège, ce n’est pas seulement la chute, c’est l’alternance. Les hauts me rendent dépendant. Les bas me poussent à continuer. Comme dans une relation toxique : les bons moments créent l’attachement les mauvais moments créent le manque. Et au milieu, je reste accroché. Ça peut paraître irrationnel pour quelqu’un d’extérieur à la pratique, mais ce chemin intérieur, ce sport, a pris cette place.
+Ce qui me piège, ce n’est pas seulement la chute, c’est l’alternance. Les hauts me rendent dépendant. Les bas me poussent à continuer. Comme dans une relation toxique : les bons moments créent l’attachement, les mauvais moments créent le manque. Et au milieu, je reste accroché. Ça peut paraître irrationnel pour quelqu’un d’extérieur à la pratique, mais ce sport a pris cette place.
 
 J’ai essayé d’avoir une relation stable. Elle n’a pas tenu. Parce que je suis dans l’excès. Jamais satisfait. J’en veux toujours plus.
 
-Et les situations stables me font peur. Comme le temps qui passe.
-
 Après ma rupture, le street workout a tout remplacé. Chaque jour, j’avais qu’un seul objectif : devenir plus fort. Je suis resté dans le feu de l’action, sans pause. Parce que m’arrêter me fait peur. Peur de perdre mon niveau, peur de ne pas atteindre mes objectifs.
+
 Mais au fond, je le sais : Ces objectifs ne me rendront pas plus heureux. Parce que je fonctionne dans l’excès, j'en voudrai toujours plus.
 
-Je l’ai déjà vécu. J’ai rêvé du front lever, une fois obtenu, rien.
+Je l’ai déjà vécu.
+
+J’ai rêvé du front lever, une fois obtenu, rien.
 J’ai rêvé du one arm, une fois obtenu, rien.
 J’ai rêvé de la planche, une fois obtenue, rien.
+
 Et c’est toujours pareil. Je suis coincé dans une spirale. Une spirale qui me donne des pics de bonheur, puis des chutes violentes de frustration et de tristesse.
-Une spirale où tout dépend de mon niveau. Et derrière tout ça, toujours cette peur : Le temps qui passe. Ce temps qui m’éloigne, lentement, de mon objectif de devenir plus fort. Je cours après quelque chose qui ne m’apaisera jamais.
+
 Parce que le problème n’est pas l’objectif. C’est ma manière de fonctionner :
 Tout dans l’excès
           </div>
-
         </details>
-
-      </div>
-    </div>
-  </main>
-
- <main>
-    <div class="container">
-
-      <div class="notes">
 
         <details class="note">
           <summary>
@@ -317,13 +294,83 @@ Parfois, je prends de la mélatonine.
 Parce que j’essaie de bien dormir.
 Neuf heures, au moins.
           </div>
+        </details>
+        
+        <details class="note">
+          <summary>
+            <span>J'ai peur du temps</span>
+            <span>+</span>
+          </summary>
 
+          <div class="note-content">
+J’ai peur du temps.
+
+Quand je ne fais rien, le temps passe et j’ai l’impression de le perdre.
+Cette idée me fait peur.
+
+Quand je regarde un film, que je lis un livre, que je scroll sur Instagram, tous ces moments où j’ai l’impression de ne rien faire, j’ai ce sentiment de perdre mon temps.
+Je sais que ça ne tient qu’à moi, pour d’autres, regarder un film, ce n’est pas rien faire.
+
+Mais dans ma définition à moi, je ne bouge pas.
+Je ne suis pas en action.
+Je reste passif.
+Je ne fais rien de manuel.
+
+Je préfère largement cuisiner, par exemple.
+
+Et à chaque fois que je vis ces moments, un regret immense me saisit.
+Le même que lorsqu’on sort trop tard, qu’on boit trop.
+Pas à cause de ce que j’ai fait.
+Mais parce que j’ai l’impression d’avoir perdu mon temps.
+Perdu mon temps de n’avoir rien fait, selon ma définition à moi.
+
+Ce temps m’éloigne petit à petit de mes objectifs.
+
+Sûrement que je me mets trop de pression :
+Je n’y arriverai pas.
+Je veux tout, tout de suite.
+Je n’aime pas attendre.
+
+Plein de petites phrases qui viennent gâcher ces moments suspendus où je ne fais rien.
+
+J’ai conscience qu’il faut que j’arrive à ralentir, à écouter mon corps, mes envies.
+Mais la plupart du temps, je préfère aller à l’encontre, plutôt que de subir et de devoir supporter ce fardeau de ne rien faire.
+
+Je pense rarement au passé.
+Les choses qui se sont produites devaient se produire, c’est comme ça.
+Je passe à autre chose rapidement.
+
+En revanche, je pense toujours au futur.
+Et j’ai peur que dans 10 ans, je me dise : j’ai perdu mon temps.
+
+C’est sûrement lié à ma manière de fonctionner.
+Le fait d’être toujours dans l’excès.
+
+Les objectifs que je me fixe sont toujours immenses.
+Ils me paraissent toujours inatteignables.
+
+Peut-être que je devrais segmenter.
+Me fixer de plus petits objectifs, à court terme.
+Pour ne plus avoir cette sensation constante.
+
+C’est ce que j’essaie de faire de plus en plus.
+Ralentir aussi.
+
+Alors, parfois, je prends ce temps.
+J’écris.
+Je réfléchis à des sujets qui me tiennent à cœur.
+
+Et même si j’ai ce sentiment de perdre mon temps, au fond, j’en prends conscience.
+Je pose des mots dessus.
+
+Et ça me fait du bien.
+          </div>
         </details>
 
       </div>
     </div>
   </main>
-  
+
   <footer>
     <div class="container">
       Site personnel — process en cours.
